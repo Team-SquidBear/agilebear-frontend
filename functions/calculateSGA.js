@@ -15,7 +15,9 @@ exports.handler = async event => {
         statusCode: 200,
         body: JSON.stringify({ 
             sga: calculatedSGA, 
-            sgaRounded: Number(calculatedSGA.toPrecision(3))
+            sgaRounded: Number(Math.round(parseFloat(calculatedSGA + 'e2')) + 'e-2').toFixed(2)
         }),
     }
 }
+
+
